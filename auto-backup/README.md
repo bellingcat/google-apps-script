@@ -1,8 +1,8 @@
 ### Goal
-For when you need to regularly backup google docs into a google drive folder
+For when you need to regularly back up google docs into a google drive folder
 
 ### Features:
-* backup any google file
+* back up any google file
 * choose a custom backup schedule per file(s)
 * optionally: delete backups older than `X` days
 
@@ -18,7 +18,7 @@ For when you need to regularly backup google docs into a google drive folder
   1. the `main` function can be used to group files which should be backed up at the same time, you can have others like `mainDaily` or `mainWeekly` and then put the files logic there: backup + optional removal of old backups
   2. you can save and run to see if it works as expected
 3. still in the "Apps Script" environment, go on the left side and switch to the "Triggers" tab
-4. add a new trigger and select the `main` function, then select the event source as `Time-Driven` and add the desired interval. you can do this for multiple functions, in case you want some files backed-up with different frequencies. 
+4. add a new trigger and select the `main` function, then select the event source as `Time-Driven` and add the desired interval. you can do this for multiple functions, in case you want some files backed up with different frequencies. 
   5. you can also decide to receive error notifications immediately upon failures
 6. optional: explore the other tabs in the "Apps Script" since they give more info on previous executions and configurations.
 
