@@ -1,4 +1,4 @@
-// Google Apps Script to backup specified google docs
+// Google Apps Script to back up specified google docs
 // additionally deletes backups older than X days
 
 BACKUP_FOLDER_ID = "BACKUP_FOLDER_ID_GOES_HERE"
@@ -10,7 +10,7 @@ function main() {
     { docFolderName: "WORD_DOC", docId: "WORD_DOC_ID_GOES_HERE", deleteOlderThanDays: 5 },
   ]
   to_backup.forEach(doc => {
-    console.time(`maintaing backup for ${doc.docFolderName}`);
+    console.time(`maintaining backup for ${doc.docFolderName}`);
       
     // backup doc by docId into the docFolderName folder
     if(backup(doc.docId, doc.docFolderName)) {
@@ -19,14 +19,14 @@ function main() {
       deleteFolderOlderThanDays(doc.docFolderName, doc.deleteOlderThanDays);
     }
     
-    console.timeEnd(`maintaing backup for ${doc.docFolderName}`);
+    console.timeEnd(`maintaining backup for ${doc.docFolderName}`);
   })
 }
 
 
 function backup(docId, docFolderName) {
   if (docId === undefined || docFolderName === undefined) {
-    console.error(`backup: got invalid values (${docId},${docFolderName})`);
+    console.error(`backup: got undefined value(s) (docId=${docId},docFolderName=${docFolderName})`);
     return false;
   }
 
@@ -47,7 +47,7 @@ function backup(docId, docFolderName) {
 
 function deleteFolderOlderThanDays(docFolderName, daysOld) {
   if (docFolderName === undefined || daysOld === undefined) {
-    console.error(`deleteOlderThan: got invalid values (${docFolderName},${daysOld})`);
+    console.error(`deleteOlderThan: got undefined value(s) (docFolderName=${docFolderName},daysOld=${daysOld})`);
     return;
   } else if (daysOld < 2) { //failsafe not to delete most recent-backups
     console.error(`days old must be bigger than 2 (${daysOld})`);
