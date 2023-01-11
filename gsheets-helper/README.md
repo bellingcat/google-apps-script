@@ -2,9 +2,10 @@
 This class makes it easy to read/write from a google sheet instance via an API, it's aimed at tabular data that has a header row with names.
 
 ### Features:
-* back up any google file
-* choose a custom backup schedule per file(s)
-* optionally: delete backups older than `X` days
+* read/write tabular data as cell/column
+* lock/unlock sheet
+* read and handle sheet protections
+* find next empty row in table
 
 
 ### How
